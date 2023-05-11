@@ -3,7 +3,7 @@ pipeline {
   stages {
     stage("Deploying and testing from release branch") {
       steps {
-        withPythonEnv('python3') {
+        withPythonEnv('python') {
           sh 'pip install -r requirements.txt'
           sh 'python ./apply_scripts.py'
           sh 'pytest ./tests/main.py'
