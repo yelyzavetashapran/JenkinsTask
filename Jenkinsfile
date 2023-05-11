@@ -3,7 +3,7 @@ pipeline {
   stages {
     stage("Deploying and testing from release branch") {
       steps {
-        withPythonEnv('python') {
+        withPythonEnv('python3') {
           sh 'pip install -r requirements.txt'
           sh 'python ./apply_scripts.py'
           sh 'pytest ./tests/main.py'
@@ -13,7 +13,7 @@ pipeline {
     
     stage ('Merging release and develop'){
 			steps{
-            withCredentials([sshUserPrivateKey(credentialsId: '6980e36c-1f09-4f5e-b951-6a9eb54add57', keyFileVariable: 'SSH_KEY')]) {
+            withCredentials([sshUserPrivateKey(credentialsId: '29636bef-b4c4-4133-bfd1-dac8c51a64c2', keyFileVariable: 'SSH_KEY')]) {
                 sh 'git checkout main'
                 sh 'git pull'
                 sh 'git merge origin/dev'
