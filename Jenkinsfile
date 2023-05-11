@@ -5,7 +5,7 @@ pipeline {
       steps {
         withPythonEnv('python3') {
           sh 'pip install -r requirements.txt'
-          sh 'python ./apply_scripts.py'
+          sh 'python3 ./apply_scripts.py'
           sh 'pytest ./tests/main.py'
         }
       }
