@@ -13,7 +13,7 @@ pipeline {
     
     stage ('Merging release and develop'){
 			steps{
-            withCredentials([sshUserPrivateKey(credentialsId: 'd6f99c76-3df6-4fd1-bc50-c1061d77a903', keyFileVariable: 'SSH_KEY')]) {
+            withCredentials([sshUserPrivateKey(credentialsId: '6980e36c-1f09-4f5e-b951-6a9eb54add57', keyFileVariable: 'SSH_KEY')]) {
                 sh 'git checkout main'
                 sh 'git pull'
                 sh 'git merge origin/dev'
