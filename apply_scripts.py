@@ -7,7 +7,7 @@ def connection():
     database = 'TRN'
     login = 'loginForTest'
     password = 'passwordfortest'
-    db_config = 'DRIVER={ODBC Driver 17 for SQL Server};SERVER=192.168.0.102;DATABASE=%(database)s;UID=%(login)s;PWD=%(password)s;TrustServerCertificate=yes;' % {'database': database, 'login': login, 'password': password}
+    db_config = 'DRIVER={ODBC Driver 17 for SQL Server};SERVER=192.168.0.166;DATABASE=%(database)s;UID=%(login)s;PWD=%(password)s;TrustServerCertificate=yes;' % {'database': database, 'login': login, 'password': password}
     engine = create_engine("mssql+pyodbc:///?odbc_connect=%s" % db_config)
     
     return engine
