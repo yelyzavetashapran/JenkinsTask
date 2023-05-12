@@ -1,3 +1,0 @@
-pytest==7.1.2
-sqlalchemy==1.4.36
-pyodbc==4.0.34
